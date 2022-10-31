@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { Button } from "@arborknot/design-system-v2"
 
+import { userService } from "../../../services/user-service"
+
 import { EmailInput } from "../../common/email-input"
 import { PasswordInput } from "../../common/password-input"
 
@@ -11,6 +13,7 @@ export const LoginForm = () => {
 
     const onLogin = async () => {
         if (!email || !password) return
+        userService.loginUser()
     }
 
 

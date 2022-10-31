@@ -1,13 +1,11 @@
+import { useState } from "react"
 import { Button } from "@arborknot/design-system-v2"
-import { useEffect, useState } from "react"
+
 import { EmailInput } from "../common/email-input"
 
 export const ResetPassword = () => {
     const [email, setEmail] = useState<string>()
 
-    useEffect(() => {
-        console.log(email)
-    }, [email])
 
     return (
         <div className="components--reset-password__container">
