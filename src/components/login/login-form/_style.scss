@@ -60,13 +60,21 @@ div.components--disclaimer__container {
   max-width: 540px;
 }
 
-div.components--disclaimer__container,
-div.components--sign-up-call__container {
+div.components--disclaimer__container {
   color: $color-grey-primary;
   font-size: 0.8rem;
 
   span.link-mock {
     cursor: pointer;
+    color: $color-lightblue-primary;
+  }
+}
+
+div.components--sign-up-call__container {
+  color: $color-grey-primary;
+  font-size: 0.8rem;
+
+  a {
     color: $color-lightblue-primary;
   }
 }

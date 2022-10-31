@@ -1,0 +1,18 @@
+main.pages--signup {
+  div.modal-children-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    width: 540px;
+
+    div.sign-in-link-container {
+      color: $color-grey-primary;
+      font-size: 0.8rem;
+
+      a {
+        color: $color-lightblue-primary;
+      }
+    }
+  }
+}

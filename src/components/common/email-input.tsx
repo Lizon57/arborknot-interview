@@ -44,5 +44,5 @@ export const EmailInput = ({ setStateCb }: Props) => {
 
 
 type Props = {
-    setStateCb?: (email: string) => void
+    setStateCb: (email: string) => void
 }

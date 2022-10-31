@@ -19,7 +19,7 @@ export const Login = () => {
                     : <>
                         <LoginForm onSuccessfulLogin={setUser} />
 
-                        <Disclaimer />
+                        <Disclaimer part="Sign in" />
 
                         <SignUpCall />
                     </>
