@@ -13,7 +13,7 @@ export const PasswordInput = ({ setStateCb }: Props) => {
     const handleInputChange = () => {
         setIsPristineInput(true)
         const password = elPasswordInputRef.current?.value || ''
-        if (password.length < 7) setIsValidInput(false)
+        if (!password.length) setIsValidInput(false)
         else {
             setIsValidInput(true)
             setStateCb(password)
