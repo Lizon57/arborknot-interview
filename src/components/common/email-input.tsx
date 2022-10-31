@@ -3,7 +3,7 @@ import { useRef, useState } from "react"
 
 
 const checkIsValidMail = (email: string) => {
-    const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,5}$/
+    const pattern = /^\S+@\S+\.\S+$/
     const regex = new RegExp(pattern)
     return regex.test(email)
 }

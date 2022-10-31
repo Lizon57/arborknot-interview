@@ -7,13 +7,19 @@ import { EmailInput } from "../../common/email-input"
 import { PasswordInput } from "../../common/password-input"
 
 
-export const LoginForm = () => {
+export const LoginForm = ({ onSuccessfulLogin }: Props) => {
     const [email, setEmail] = useState<string>()
     const [password, setPassword] = useState<string>()
 
     const onLogin = async () => {
         if (!email || !password) return
-        userService.loginUser()
+        try {
+            const userToken = await userService.loginUser(email, password)
+            console.log(`${userToken} is the loggedin user token`)
+            onSuccessfulLogin(email)
+        } catch (err) {
+            console.log(err)
+        }
     }
 
 
@@ -28,4 +34,9 @@ export const LoginForm = () => {
             </form>
         </div>
     )
+}
+
+
+type Props = {
+    onSuccessfulLogin: (user: string) => void
 }
