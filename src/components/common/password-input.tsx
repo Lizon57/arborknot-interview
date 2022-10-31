@@ -1,4 +1,5 @@
 import { useRef, useState } from "react"
+import { Link } from "react-router-dom"
 import { Label } from "@arborknot/design-system-v2"
 import { BiHide, BiShow } from "react-icons/bi"
 
@@ -24,7 +25,10 @@ export const PasswordInput = ({ setStateCb }: Props) => {
 
     return (
         <div className="components-common--password-input__container">
-            <Label size="medium">Password</Label>
+            <div className="label">
+                <Label size="medium">Password</Label>
+                <Link to="/forgot-password">Forgot?</Link>
+            </div>
 
             <div className="input-container">
                 <input

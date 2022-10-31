@@ -19,6 +19,16 @@ div.components-common--email-input__container {
 }
 
 div.components-common--password-input__container {
+  div.label {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      font-size: 0.8rem;
+      color: $color-lightblue-primary;
+    }
+  }
+
   div.input-container {
     position: relative;
 

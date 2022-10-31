@@ -1,5 +1,5 @@
 import { Label } from "@arborknot/design-system-v2"
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 
 
 const checkIsValidMail = (email: string) => {
@@ -20,15 +20,12 @@ export const EmailInput = ({ setStateCb }: Props) => {
 
         const email = elEmailInputRef.current?.value || ''
         const isValidMail = checkIsValidMail(email)
-        setIsValidMail(isValidMail)
+        if (isValidMail) {
+            setIsValidMail(isValidMail)
+            if (setStateCb) setStateCb(email)
+        }
     }
 
-    useEffect(() => {
-        if (!setStateCb) return
-
-        const email = elEmailInputRef.current?.value || ''
-        if (isValidMail) setStateCb(email)
-    }, [isValidMail, setStateCb])
 
 
     return (

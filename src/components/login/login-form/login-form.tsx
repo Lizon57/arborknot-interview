@@ -9,10 +9,6 @@ export const LoginForm = () => {
     const [email, setEmail] = useState<string>()
     const [password, setPassword] = useState<string>()
 
-    const handleEmailInput = (email: string) => setEmail(email)
-    const handlePasswordInput = (password: string) => setPassword(password)
-
-
     const onLogin = async () => {
         if (!email || !password) return
     }
@@ -21,9 +17,9 @@ export const LoginForm = () => {
     return (
         <div className="components--login-form__container">
             <form>
-                <EmailInput setStateCb={handleEmailInput} />
+                <EmailInput setStateCb={setEmail} />
 
-                <PasswordInput setStateCb={handlePasswordInput} />
+                <PasswordInput setStateCb={setPassword} />
 
                 <Button type="primary" text="Sign in" controlType="textOnly" size="large" onPress={onLogin} />
             </form>
