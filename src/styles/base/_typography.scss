@@ -10,3 +10,9 @@ $font-path: "../../assets/typography";
   font-family: Inter;
   src: url(#{$font-path}/inter/inter.ttf);
 }
+
+
+@font-face {
+  font-family: Sfprotext;
+  src: url(#{$font-path}/sfprotext/sfprotext.ttf);
+}

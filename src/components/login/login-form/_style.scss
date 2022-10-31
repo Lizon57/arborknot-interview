@@ -1,4 +1,68 @@
 div.components--login-form__container {
   display: flex;
   flex-direction: column;
+
+  width: 540px;
+
+  form {
+    margin-block-end: 2rem;
+
+    div[class*="input"] {
+      margin-block-end: 1rem;
+
+      input {
+        outline: 0;
+        border-radius: 4px;
+        border: 1px solid $color-grey-primary;
+        font-size: 0.8rem;
+        padding: 5px;
+        width: 100%;
+      }
+    }
+
+    div.invalid-email-notice{
+      font-size: 0.8rem;
+      color: $color-red-primary;
+    }
+
+    div.password-input {
+      div.label {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      span.forgot-password {
+        color: $color-lightblue-primary;
+        line-height: 24px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      div.input-container {
+        position: relative;
+
+        svg {
+          position: absolute;
+          right: 5px;
+          top: 50%;
+          transform: translateY(-50%)
+        }
+      }
+    }
+  }
+}
+
+div.components--disclaimer__container {
+  margin-block-end: 2rem;
+}
+
+div.components--disclaimer__container,
+div.components--sign-up-call__container {
+  color: $color-grey-primary;
+  font-size: 0.8rem;
+
+  span.link-mock {
+    color: $color-lightblue-primary;
+    font-weight: 600;
+  }
 }
