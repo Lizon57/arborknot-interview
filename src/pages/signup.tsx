@@ -6,6 +6,7 @@ import { Modal, Label, Input, Button } from "@arborknot/design-system-v2"
 import { EmailInput } from "../components/common/email-input"
 import { PasswordInput } from "../components/common/password-input"
 import { Disclaimer } from "../components/login/login-form/disclaimer"
+import { userService } from "../services/user-service"
 
 export const Signup = () => {
     const [isModalOpen, setIsModalOpen] = useState(true)
@@ -13,6 +14,18 @@ export const Signup = () => {
     const [password, setPassword] = useState<string>()
 
     const onCloseModal = () => setIsModalOpen(false)
+
+
+    const onSignup = async () => {
+        if (!email || !password) return
+
+        try {
+            await userService.signup(email, password)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
 
     return (
         <main className="pages--signup">
@@ -27,7 +40,7 @@ export const Signup = () => {
 
                     <PasswordInput setStateCb={setPassword} />
 
-                    <Button text="Sign up" size="medium" controlType="textOnly" type="primary" />
+                    <Button text="Sign up" size="medium" controlType="textOnly" type="primary" onPress={onSignup} />
 
                     <Disclaimer part="Sign up" />
 

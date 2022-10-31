@@ -1,15 +1,28 @@
 import { httpService } from "./http-service"
 
 export const userService = {
-    loginUser
+    login,
+    signup
 }
 
 
-async function loginUser(email: string, password: string) {
+async function login(email: string, password: string) {
     try {
         const user = await httpService.post('user/login', {
-            email: "alex!@arborknot.io",
-            password: "1"
+            email,
+            password
+        })
+        return user
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+async function signup(email: string, password: string) {
+    try {
+        const user = await httpService.post('user/signup', {
+            email,
+            password
         })
         return user
     } catch (err) {

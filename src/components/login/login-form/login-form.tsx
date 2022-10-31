@@ -14,7 +14,7 @@ export const LoginForm = ({ onSuccessfulLogin }: Props) => {
     const onLogin = async () => {
         if (!email || !password) return
         try {
-            const userToken = await userService.loginUser(email, password)
+            const userToken = await userService.login(email, password)
             console.log(`${userToken} is the loggedin user token`)
             onSuccessfulLogin(email)
         } catch (err) {
