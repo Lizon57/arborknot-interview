@@ -29,6 +29,10 @@ div.components--login-form__container {
       div.label {
         display: flex;
         justify-content: space-between;
+
+        a {
+          color: $color-lightblue-primary;
+        }
       }
 
       span.forgot-password {
@@ -43,7 +47,7 @@ div.components--login-form__container {
 
         svg {
           position: absolute;
-          right: 5px;
+          right: 10px;
           top: 2px;
         }
       }
@@ -53,6 +57,7 @@ div.components--login-form__container {
 
 div.components--disclaimer__container {
   margin-block-end: 2rem;
+  max-width: 540px;
 }
 
 div.components--disclaimer__container,
@@ -61,7 +66,7 @@ div.components--sign-up-call__container {
   font-size: 0.8rem;
 
   span.link-mock {
+    cursor: pointer;
     color: $color-lightblue-primary;
-    font-weight: 600;
   }
 }
