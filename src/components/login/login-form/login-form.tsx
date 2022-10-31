@@ -4,6 +4,7 @@ import { Button, Label } from "@arborknot/design-system-v2"
 
 import { Disclaimer } from "./disclaimer"
 import { SignUpCall } from "./sign-up-call"
+import { userService } from "../../../services/user-service"
 
 
 const isMailValid = (email: string) => {
@@ -21,12 +22,15 @@ export const LoginForm = () => {
     const elEmailInputRef = useRef<HTMLInputElement>(null)
     const elPasswordInputRef = useRef<HTMLInputElement>(null)
 
-    const onLogin = () => {
+    const onLogin = async () => {
         const email = elEmailInputRef.current?.value || ''
         const password = elPasswordInputRef.current?.value || ''
 
         const isCredentialsValid = checkIsCredentialsValid(email, password)
         if (!isCredentialsValid) return
+
+        const loggedInUser = await userService.loginUser()
+        if (loggedInUser?.type === 'cors') console.log('Cors error, please try again')
     }
 
     const checkIsCredentialsValid = (email: string, password: string) => {
